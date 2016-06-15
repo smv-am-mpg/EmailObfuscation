@@ -35,7 +35,8 @@ class EmailObfuscation extends WireData implements Module, ConfigurableModule {
 		'jsFile' => 'emo.min.js', 
 		'jsLoad' => 2, 
 		'mailto' => 1, 
-		'debug' => false, 
+		'debug' => false,
+		'disabled' => false, 
 		'excludeTemplates' => array(), 
 		'excludePages' => array(), 
 	);
@@ -213,7 +214,7 @@ class EmailObfuscation extends WireData implements Module, ConfigurableModule {
 	 *
 	 */
 	public function obfuscate($event) {
-
+		if($this->disabled) return;
 		$page = $event->object;
 		$output = $event->return;
 
