@@ -38,7 +38,7 @@ function emo_replace() {
       if (elem.firstChild) {
         elem.removeChild(elem.firstChild);
       }
-      elem.innerHTML = decrypt_string(i);
+      elem.outerHTML = decrypt_string(i);
     }
   }
 }
