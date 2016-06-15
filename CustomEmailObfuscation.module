@@ -13,7 +13,7 @@
  *
  */
 
-class EmailObfuscation extends WireData implements Module, ConfigurableModule {	
+class CustomEmailObfuscation extends WireData implements Module, ConfigurableModule {	
 
 	public static function getModuleInfo() {
 		return array(
@@ -90,7 +90,7 @@ class EmailObfuscation extends WireData implements Module, ConfigurableModule {
 		}
 
 		// add path to js file url
-		$url = $this->config->urls->EmailObfuscation;
+		$url = $this->config->urls->CustomEmailObfuscation;
 		if(strpos($this->jsFile, $url) === false) {
 			$this->jsFile = $url . $this->jsFile;
 		}
@@ -350,7 +350,7 @@ class EmailObfuscation extends WireData implements Module, ConfigurableModule {
 	}
 
 	public static function getModuleConfigInputfields(array $data) {
-		$module = wire('modules')->get('EmailObfuscation'); 
+		$module = wire('modules')->get('CustomEmailObfuscation'); 
 		return $module->getConfig();
 	}
 
